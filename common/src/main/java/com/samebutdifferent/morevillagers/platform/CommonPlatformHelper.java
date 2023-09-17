@@ -8,9 +8,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
 
-import java.util.Set;
 import java.util.function.Supplier;
 
 public class CommonPlatformHelper {
@@ -30,7 +28,7 @@ public class CommonPlatformHelper {
     }
 
     @ExpectPlatform
-    public static Supplier<PoiType> registerPoiType(String name, Supplier<Set<BlockState>> matchingStates) {
+    public static Supplier<PoiType> registerPoiType(String name, Supplier<PoiType> poiType) {
         throw new AssertionError();
     }
 
