@@ -34,7 +34,7 @@ public class MVProfessions {
     public static final Supplier<VillagerProfession> MINER = CommonPlatformHelper.registerProfession("miner",
             () -> new VillagerProfession("miner", holder -> holder.value().equals(MVPoiTypes.MINER_POI.get()), holder -> holder.value().equals(MVPoiTypes.MINER_POI.get()), ImmutableSet.of(), ImmutableSet.of(), SoundEvents.VILLAGER_WORK_ARMORER));
 
-    public static void fillTradeData() {
+        public static void fillTradeData() {
         // OCEANOGRAPHER TRADES
         VillagerTrades.ItemListing[] oceanographerLevel1 = new VillagerTrades.ItemListing[]{
                 new VillagerTrades.EmeraldForItems(Items.PRISMARINE,14,16,2),
@@ -111,12 +111,12 @@ public class MVProfessions {
 
         // ENDERIAN TRADES
         VillagerTrades.ItemListing[] enderianLevel1 = new VillagerTrades.ItemListing[]{
-                new VillagerTrades.EmeraldForItems(Items.END_STONE,24,16,2),
-                new VillagerTrades.ItemsForEmeralds(Items.END_ROD, 4, 3, 16, 1)
+                new VillagerTrades.EmeraldForItems(Items.END_STONE,24,16,2)
+                //new VillagerTrades.ItemsForEmeralds(Items.END_ROD, 4, 3, 16, 1)
         };
         VillagerTrades.ItemListing[] enderianLevel2 = new VillagerTrades.ItemListing[]{
                 new VillagerTrades.EmeraldForItems(Items.POPPED_CHORUS_FRUIT,20,16,10),
-                new VillagerTrades.ItemsForEmeralds(Items.PHANTOM_MEMBRANE, 5, 1, 16, 5)
+                new VillagerTrades.ItemsForEmeralds(Items.CHORUS_PLANT, 5, 1, 16, 5)
         };
         VillagerTrades.ItemListing[] enderianLevel3 = new VillagerTrades.ItemListing[]{
                 new VillagerTrades.EmeraldForItems(Items.ENDER_PEARL,14,16,20),
@@ -127,8 +127,10 @@ public class MVProfessions {
                 new VillagerTrades.TreasureMapForEmeralds(14, MVTags.ON_END_CITY_EXPLORER_MAPS, "filled_map.endcity", MapDecoration.Type.BANNER_PURPLE, 12, 15)
         };
         VillagerTrades.ItemListing[] enderianLevel5 = new VillagerTrades.ItemListing[]{
+                /*
                 new VillagerTrades.ItemsForEmeralds(Items.SHULKER_SHELL, 12, 1, 8, 30),
                 new VillagerTrades.ItemsForEmeralds(Items.DRAGON_HEAD, 20, 1, 2, 30)
+                */
         };
         VillagerTrades.TRADES.put(ENDERIAN.get(),toIntMap(ImmutableMap.of(1,enderianLevel1,2,enderianLevel2,3,enderianLevel3,4,enderianLevel4,5,enderianLevel5)));
 
@@ -225,7 +227,7 @@ public class MVProfessions {
                 new VillagerTrades.TreasureMapForEmeralds(15, MVTags.ON_ANCIENT_CITY_EXPLORER_MAPS, "filled_map.ancient_city", MapDecoration.Type.BLUE_MARKER, 12, 15)
         };
         VillagerTrades.TRADES.put(MINER.get(),toIntMap(ImmutableMap.of(1,minerLevel1,2,minerLevel2,3,minerLevel3,4,minerLevel4,5,minerLevel5)));
-    }
+        }
 
     private static Int2ObjectMap<VillagerTrades.ItemListing[]> toIntMap(ImmutableMap<Integer, VillagerTrades.ItemListing[]> p_221238_0_) {
         return new Int2ObjectOpenHashMap<>(p_221238_0_);
